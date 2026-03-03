@@ -5,7 +5,7 @@ namespace MyOnlineStore.Models;
 
 public partial class Product
 {
-    public int Id { get; set; }
+    public int ProductId { get; set; }
 
     public string Name { get; set; } = null!;
 

@@ -94,11 +94,11 @@ public partial class OnlineStoreDbContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("products_pkey");
+            entity.HasKey(e => e.ProductId).HasName("products_pkey");
 
             entity.ToTable("products");
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.ProductId).HasColumnName("id");
             entity.Property(e => e.Categoryid).HasColumnName("categoryid");
             entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.Name)

@@ -1,0 +1,42 @@
+@using MyOnlineStore.Models
+@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Наші товари";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Наші товари</h1>
+</div>
+
+<div class="container mt-4">
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Назва</th>
+                <th>Ціна</th>
+                <th>Опис</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var item in Model)
+                {
+                    <tr>
+                       <td>@item.ProductId</td>
+<td>@item.Price грн</td>
+<td>@item.Description</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center">Товари не знайдені в базі даних</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
